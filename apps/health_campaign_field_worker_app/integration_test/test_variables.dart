@@ -18,6 +18,7 @@ Map<String, dynamic> getTestData() {
 
 // if the names of the following buttons change in the app, you can change them here
 Map<String, Finder> getWidgets() {
+  //login
   final username = find.byKey(const Key('username'));
   final password = find.byKey(const Key('password'));
   final continueButton = find.widgetWithText(DigitElevatedButton, 'Continue');
@@ -26,11 +27,16 @@ Map<String, Finder> getWidgets() {
     DigitElevatedButton,
     'Submit',
   );
+
+  //attendance
   final markAttendanceButton =
       find.widgetWithText(DigitElevatedButton, 'Mark Attendance');
   final manageAttendanceButton =
       find.widgetWithText(HomeItemCard, 'Manage Attendance');
   final openRegister = find.text('Open Register').at(3);
+
+  //inventory
+  final manageStock = find.widgetWithText(HomeItemCard, 'Manage Stock');
 
   return {
     'username': username,
@@ -41,5 +47,17 @@ Map<String, Finder> getWidgets() {
     'manageAttendance': manageAttendanceButton,
     'markAttendance': markAttendanceButton,
     'openRegister': openRegister,
+    'manageStock': manageStock,
   };
+}
+
+List<String> getBoundaryName() {
+  return [
+    'MOÇAMBIQUE',
+    'NAMPULA',
+    'MURRUPULA',
+    'NIHESSIUE',
+    'NIHESSIUE',
+    'CAVINA1',
+  ];
 }
